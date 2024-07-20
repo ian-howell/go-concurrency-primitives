@@ -15,6 +15,8 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [06 - Select Timeout](select_timeout/main.go)
 * [07 - Quit Signal](quit_signal/main.go)
 * [08 - Daily Chain](daisy_chain/main.go)
+* [09 - Google Search Synchronous](google_search_synchronous/main.go)
+* [10 - Google Search Asynchronous](google_search_asynchronous/main.go)
 
 -----
 
@@ -27,6 +29,8 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * `Restore Sequence` - Fan in with a twist, allowing order of fanned channel results to be controlled.
 * `Select Timeout` - Giving a routine a period of time to finish else doing something else.
 * `Quit Signal` - Signally to a goroutine that it is time to stop potentially early.
+* `Daisy Chain` - Many goroutines, passing along messages like chinese whispers - confusing!
+* `Google Search Synchronous` - A synchronous implementation of basic google searching. 
 
 
 
@@ -36,3 +40,4 @@ More materials to include in the repository, things I personally need to learn m
 
  - indepth channels
  - go scheduler, runtime and os thread specifics
+ - daisy chain is confusing!
