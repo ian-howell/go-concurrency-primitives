@@ -9,6 +9,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 
 * [01 - Goroutines](goroutines/main.go)
 * [02 - Channels](channels/main.go)
+* [03 - Generators](generators/main.go)
 
 -----
 
