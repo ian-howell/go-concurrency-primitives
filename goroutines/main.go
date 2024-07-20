@@ -14,7 +14,7 @@ func main() {
 	synchronous()
 
 	// This function will not block, the go runtime will multiplex it
-	// However, because it is not blocking it will prevent main() from
+	// However, because it is not blocking it will not prevent main() from
 	// exiting.  main will exit instantly, regardless of the sleep.
 	// more on other concurrency primities to handle these cases later.
 	go asynchronous()
