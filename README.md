@@ -11,3 +11,11 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [02 - Channels](channels/main.go)
 
 -----
+
+
+### Learning Materials TODO
+
+More materials to include in the repository, things I personally need to learn more about:
+
+ - indepth channels
+ - go scheduler, runtime and os thread specifics
