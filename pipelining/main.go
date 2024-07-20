@@ -17,28 +17,35 @@ Each stage pushes its transformed/handled data through a downstream
 channel via outbound channels
 */
 func main() {
-	genChan := numInRange(1, 1_000_000)
+	done := make(chan struct{})
+	defer close(done)
+
+	numbers := numInRange(1, 1000)
 	scaled := make([]<-chan int, runtime.NumCPU())
 	for i := 0; i < runtime.NumCPU(); i++ {
-		scaled[i] = squared(genChan)
+		scaled[i] = squared(done, numbers)
 	}
-	for val := range merge(scaled...) {
+	for val := range merge(done, scaled...) {
 		fmt.Println(val)
 	}
 }
 
 // merge combines multiple channels into a single channel
 // a fan out approach.
-func merge(chans ...<-chan int) chan int {
+func merge(done <-chan struct{}, chans ...<-chan int) chan int {
 	var wg sync.WaitGroup
-	wg.Add(len(chans))
 	downstream := make(chan int)
 	consumer := func(c <-chan int) {
+		defer wg.Done()
 		for n := range c {
-			downstream <- n
+			select {
+			case downstream <- n:
+			case <-done:
+				return
+			}
 		}
-		wg.Done()
 	}
+	wg.Add(len(chans))
 	for _, ch := range chans {
 		go consumer(ch)
 	}
@@ -51,26 +58,27 @@ func merge(chans ...<-chan int) chan int {
 	return downstream
 }
 
-// generateNumbersInRange asynchronously generates numbers in a range
+// numInRange creates a channel full of integers in the range
 func numInRange(inclusiveLow, exclusiveHigh int) <-chan int {
-	downstream := make(chan int)
-	go func() {
-		for i := inclusiveLow; i < exclusiveHigh; i++ {
-			downstream <- i
-		}
-		close(downstream)
-	}()
+	downstream := make(chan int, exclusiveHigh-inclusiveLow)
+	for i := inclusiveLow; i < exclusiveHigh; i++ {
+		downstream <- i
+	}
 	return downstream
 }
 
 // squareroot asynchronously squares the numbers
-func squared(upstream <-chan int) <-chan int {
+func squared(done <-chan struct{}, upstream <-chan int) <-chan int {
 	downstream := make(chan int)
 	go func() {
+		defer close(downstream)
 		for n := range upstream {
-			downstream <- n * n
+			select {
+			case downstream <- n * n:
+			case <-done:
+				return
+			}
 		}
-		close(downstream)
 	}()
 	return downstream
 }
