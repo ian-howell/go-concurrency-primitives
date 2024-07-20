@@ -7,6 +7,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 
 ### Patterns
 
-    * [01 - Goroutines](goroutines/main.go)
+* [01 - Goroutines](goroutines/main.go)
+* [02 - ...]()
 
 -----
