@@ -31,6 +31,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * `Quit Signal` - Signally to a goroutine that it is time to stop potentially early.
 * `Daisy Chain` - Many goroutines, passing along messages like chinese whispers - confusing!
 * `Google Search Synchronous` - A synchronous implementation of basic google searching. 
+* `Google Search Asynchronous` - Goroutines per search type and filtering in results.
 
 
 
