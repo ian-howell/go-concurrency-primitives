@@ -14,6 +14,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [05 - Restore Sequence](restore_sequence/main.go)
 * [06 - Select Timeout](select_timeout/main.go)
 * [07 - Quit Signal](quit_signal/main.go)
+* [08 - Daily Chain](daisy_chain/main.go)
 
 -----
 
