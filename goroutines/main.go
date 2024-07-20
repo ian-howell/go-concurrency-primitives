@@ -9,7 +9,7 @@ func main() {
 		sorts of magic with OS threads etc, more on that later.
 	*/
 
-	// This function is blocking, it will block the program for 10 seconds
+	// This function is blocking, it will block the program for 5 seconds
 	// as its blocking the main thread
 	synchronous()
 
@@ -20,14 +20,14 @@ func main() {
 	go asynchronous()
 
 	/*
-		Here we technically, leaked a goroutine but the program will terminate in 10 seconds
-		time go run goroutines/main.go                                                                                    ok  10:45:32
-			go run goroutines/main.go  0.05s user 0.06s system 1% cpu 10.064 total
+		Here we technically, leaked a goroutine but the program will terminate in 5 seconds:
+
+		go run goroutines/main.go  0.05s user 0.06s system 1% cpu 5.059 total
 	*/
 }
 
 func synchronous() {
-	time.Sleep(10 * time.Second)
+	time.Sleep(5 * time.Second)
 }
 
 func asynchronous() {
