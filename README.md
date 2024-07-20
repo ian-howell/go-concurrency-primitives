@@ -10,8 +10,8 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [01 - Goroutines](goroutines/main.go)
 * [02 - Channels](channels/main.go)
 * [03 - Generators](generators/main.go)
-* [04 - fan in](fan_in/main.go)
-* [05 - restore sequence](restore_sequence/main.go)
+* [04 - Fan In](fan_in/main.go)
+* [05 - Restore Sequence](restore_sequence/main.go)
 
 -----
 
