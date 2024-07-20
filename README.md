@@ -13,6 +13,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [04 - Fan In](fan_in/main.go)
 * [05 - Restore Sequence](restore_sequence/main.go)
 * [06 - Select Timeout](select_timeout/main.go)
+* [07 - Quit Signal](quit_signal/main.go)
 
 -----
 
@@ -24,6 +25,8 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * `Fan In` - Merging multiple goroutines results into a single channel for processing.
 * `Restore Sequence` - Fan in with a twist, allowing order of fanned channel results to be controlled.
 * `Select Timeout` - Giving a routine a period of time to finish else doing something else.
+* `Quit Signal` - Signally to a goroutine that it is time to stop potentially early.
+
 
 
 ### Learning Materials TODO
