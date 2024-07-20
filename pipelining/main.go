@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
 
 /*
 In the context of software, upstream is a system that sends data
@@ -14,28 +18,37 @@ channel via outbound channels
 */
 func main() {
 	genChan := numInRange(1, 1_000_000)
-	sq := squared(genChan)
-	for number := range sq {
-		fmt.Println(number)
+	scaled := make([]<-chan int, runtime.NumCPU())
+	for i := 0; i < runtime.NumCPU(); i++ {
+		scaled[i] = squared(genChan)
+	}
+	for val := range merge(scaled...) {
+		fmt.Println(val)
+	}
+}
+
+// merge combines multiple channels into a single channel
+// a fan out approach.
+func merge(chans ...<-chan int) chan int {
+	var wg sync.WaitGroup
+	wg.Add(len(chans))
+	downstream := make(chan int)
+	consumer := func(c <-chan int) {
+		for n := range c {
+			downstream <- n
+		}
+		wg.Done()
+	}
+	for _, ch := range chans {
+		go consumer(ch)
 	}
 
-	// since both the upstream and downstream channels are of the same type
-	// they can composed n times
-	for n := range squared(squared(squared(numInRange(1, 10)))) {
-		fmt.Println(n)
-		/*
-			1
-			256
-			6561
-			65536
-			390625
-			1679616
-			5764801
-			16777216
-			43046721
-		*/
-	}
+	go func() {
+		wg.Wait()
+		close(downstream)
+	}()
 
+	return downstream
 }
 
 // generateNumbersInRange asynchronously generates numbers in a range
