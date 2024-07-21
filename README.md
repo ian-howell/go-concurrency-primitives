@@ -18,6 +18,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [09 - Google Search Synchronous](google_search_synchronous/main.go)
 * [10 - Google Search Asynchronous](google_search_asynchronous/main.go)
 * [11 - Google Search Async Filtered](google_search_async_timeout/main.go)
+* [18 - Worker Pool](workerpool/main.go)
 
 -----
 
@@ -34,6 +35,8 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * `Google Search Synchronous` - A synchronous implementation of basic google searching. 
 * `Google Search Asynchronous` - Goroutines per search type and filtering in results.
 * `Google Search Asynchronous Filtered` - Omitting results that took too long.
+* ...
+* `Worker Pool` - Fan out work to multiple works to complete in parallel.
 
 
 
