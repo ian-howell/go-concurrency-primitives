@@ -15,7 +15,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * [06 - Restore Sequence](restore_sequence/main.go)
 * [07 - Select Timeout](select_timeout/main.go)
 * [08 - Quit Signal](quit_signal/main.go)
-* [09 - Daily Chain](daisy_chain/main.go)
+* [09 - Daisy Chain](daisy_chain/main.go)
 * [10 - Google Search Synchronous](google_search_synchronous/main.go)
 * [11 - Google Search Asynchronous](google_search_asynchronous/main.go)
 * [12 - Google Search Async Filtered](google_search_async_timeout/main.go)
