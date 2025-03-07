@@ -1,11 +1,11 @@
-## Go Concurrency
+# Go Concurrency
 
 This repository houses various golang concurrency pattern implementations.  If you are new to 
 concurrency in go, the optimal order to review the solutions is outlined below:
 
 -----
 
-### Patterns
+## Patterns
 
 * [01 - Goroutines](goroutines/main.go)
 * [02 - WaitGroups](waitgroups/main.go)
@@ -23,7 +23,7 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 
 -----
 
-### Pattern Overviews
+## Pattern Overviews
 
 * `Goroutines` - A basic implementation of goroutines, running things asynchronously.
 * `Channels` - A communication mechanism between goroutines, sharing memory by communicating.
@@ -41,10 +41,20 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 
 
 
-### Learning Materials TODO
+## Learning Materials TODO
 
 More materials to include in the repository, things I personally need to learn more about:
 
  - indepth channels
  - go scheduler, runtime and os thread specifics
  - daisy chain is confusing!
+
+## Attribution notice
+
+This repository was forked from [symonk's repo](fork). I intend to pretty
+heavily modify it to suit my own needs, but the original repo is proving to be a
+great starting point. Shout outs to [symonk](symonk) for laying out the base
+framework for this project!
+
+[fork https://github.com/symonk/go-concurrency-deep-dive]
+[symonk https://github.com/symonk]
