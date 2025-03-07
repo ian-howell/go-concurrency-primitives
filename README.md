@@ -51,10 +51,10 @@ More materials to include in the repository, things I personally need to learn m
 
 ## Attribution notice
 
-This repository was forked from [symonk's repo](fork). I intend to pretty
+This repository was forked from [symonk's repo][fork]. I intend to pretty
 heavily modify it to suit my own needs, but the original repo is proving to be a
-great starting point. Shout outs to [symonk](symonk) for laying out the base
+great starting point. Shout outs to [symonk][symonk] for laying out the base
 framework for this project!
 
-[fork https://github.com/symonk/go-concurrency-deep-dive]
-[symonk https://github.com/symonk]
+[fork]: https://github.com/symonk/go-concurrency-deep-dive
+[symonk]: https://github.com/symonk
