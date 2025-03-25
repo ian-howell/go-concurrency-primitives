@@ -8,6 +8,7 @@ import (
 func boring(quit chan string, msg string) <-chan string {
 	downstream := make(chan string)
 	go func() {
+		defer close(downstream)
 		for i := 0; i < 10; i++ {
 			select {
 			case <-quit:
@@ -18,7 +19,6 @@ func boring(quit chan string, msg string) <-chan string {
 				time.Sleep(500 * time.Millisecond)
 			}
 		}
-		close(downstream)
 	}()
 	return downstream
 }

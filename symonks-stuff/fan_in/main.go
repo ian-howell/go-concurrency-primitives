@@ -26,8 +26,8 @@ func main() {
 	ch3 := boring("baz", 2000*time.Millisecond)
 	merged := fanIn(ch1, ch2, ch3)
 
-	for i := 0; i < 30; i++ {
-		fmt.Println(<-merged)
+	for v := range merged {
+		fmt.Println(v)
 	}
 
 }
