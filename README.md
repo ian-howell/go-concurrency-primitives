@@ -37,16 +37,6 @@ concurrency in go, the optimal order to review the solutions is outlined below:
 * ...
 * `Worker Pool` - Fan out work to multiple works to complete in parallel.
 
-
-
-## Learning Materials TODO
-
-More materials to include in the repository, things I personally need to learn more about:
-
- - indepth channels
- - go scheduler, runtime and os thread specifics
- - daisy chain is confusing!
-
 ## Attribution notice
 
 This repository was forked from [symonk's repo][fork]. I intend to pretty
