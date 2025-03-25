@@ -24,11 +24,11 @@ a default case.
 // it randomly sleeps to demonstrate sometimes the select
 // will use it when ready, else fall back to the duration lapse
 // monitoring channel
-func boring(msg string) <-chan string {
+func boring() <-chan string {
 	downstream := make(chan string)
 	go func() {
 		for i := 0; i < 10; i++ {
-			downstream <- fmt.Sprintf("Message %s: called: %d", msg, i)
+			downstream <- fmt.Sprintf("iteration: %d", i)
 			time.Sleep(time.Duration(rand.Intn(2000)) * time.Millisecond)
 		}
 		close(downstream)
@@ -38,7 +38,7 @@ func boring(msg string) <-chan string {
 }
 
 func main() {
-	ch := boring("foo")
+	ch := boring()
 	t := time.NewTicker(time.Second)
 
 loop:
@@ -49,8 +49,10 @@ loop:
 				fmt.Println("All values exhausted.")
 				break loop
 			}
-			fmt.Printf("goroutine had finished. %s\n", msg)
+			fmt.Printf("iteration in the time limit: %s\n", msg)
 		case <-t.C:
+			// TODO: This is cool, but I don't think symonk fully grasped the idea here. This is
+			// going to "tick" on *every* second, regardless of what's going on in the goroutine.
 			fmt.Println("took more than a second")
 		}
 	}
