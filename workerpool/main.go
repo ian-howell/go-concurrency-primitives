@@ -15,8 +15,8 @@ func worker(id int, taskQ <-chan int, results chan<- int) {
 
 func main() {
 	const tasks = 8
-	jobs := make(chan int, tasks)
-	results := make(chan int, tasks)
+	jobs := make(chan int)
+	results := make(chan int)
 	for i := 0; i < tasks; i++ {
 		go worker(i, jobs, results)
 	}
