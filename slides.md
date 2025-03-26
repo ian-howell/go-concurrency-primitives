@@ -33,12 +33,9 @@ Welcome to Stl Go!
 
 # Announcements
 
-<!--
-StlGo will be meeting during the odd-numbered months, and DevOps Stl (our
-partner group) will be meeting during the even-numbered months.
--->
 * Scheduling
 * Raffle
+  * Manning Publications
 
 # Sponsors
 
