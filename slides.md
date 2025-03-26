@@ -35,7 +35,7 @@ Welcome to Stl Go!
 
 * Scheduling
 * Raffle
-  * Manning Publications
+  * Go In Practice - Manning Press
 
 # Sponsors
 
