@@ -5,6 +5,25 @@ paging: ""
 --- 
 ---
 
+Welcome to Stl Go!
+
+```
+     .-::::::-.                                                  
+.:-::::::::::::::-:.                                                 
+´_:::    ::    :::_´                                                 
+ .:( ^   :: ^   ):.                                                 
+ ´:::   (..)   :::.                                                 
+ ´:::::::UU:::::::´                                                 
+ .::::::::::::::::.                                                 
+ O::::::::::::::::O                                                 
+ -::::::::::::::::-                                                 
+ ´::::::::::::::::´                                                 
+  .::::::::::::::.                                                 
+    oO:::::::Oo                                                 
+```
+
+---
+
 # Introductions
 
 * Ian Howell (new!)
@@ -12,11 +31,7 @@ paging: ""
 * Vinod Vydier
 * Paul Balogh
 
----
-
 # Announcements
-
-Welcome!
 
 * Scheduling
 
@@ -27,17 +42,38 @@ partner group) will be meeting during the even-numbered months.
 
 ---
 
-# Upcoming Meetups and Events
+# Events
 
-<!-- TODO: find links, add extra details -->
-* St. Louis Code & Coffee
-* Tech on Tap
+* GopherCon in NYC
+  * August 26 - August 28
+  * Lightning talk proposals open June 2
 * DevFest at WashU
+  * April 12
+
+# Meetups
+  
+* St. Louis Code & Coffee
+  * Every other Sunday at TechArtista
+* Tech on Tap
+  * Every 2nd Tuesday at Urban Chestnut
 
 ---
 
-# Future Topics (presented by... you?)
+# Future Topics: "The best way to learn is to teach"
 
-"The best way to learn is to teach."
+* Concurrency patterns
+* Weak pointers
+* How to use and write iterators
+* Unit testing with Testify
+* Unit testing with Mockery
+* Generating and analyzing code coverage
+* A tour of the errors package
+* A tour of the http/net package
+* A tour of the log/slog package
+* Generics
+* Custom struct tags
+* Creating CLIs with Cobra
+* Creating TUIs with BubbleTea
+* Interacting with Kubernetes via client-go
+* GopherJS
 
-<!-- TODO: Grab the starter list from the steering committee doc -->
