@@ -1,5 +1,5 @@
 --- 
-author: Ian Howell
+author: Ian Howell (ian.howell0@gmail.com)
 date: March 26, 2025
 paging: ""
 --- 
