@@ -40,6 +40,10 @@ partner group) will be meeting during the even-numbered months.
 * Scheduling
 * Raffle
 
+# Sponsors
+
+* [Go Bridge](https://gobridge.org/)
+
 ---
 
 # Events
